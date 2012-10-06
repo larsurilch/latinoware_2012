@@ -1,0 +1,20 @@
+<%= semantic_form_for @inspection, :html => { :class => "form_mobile", "data-ajax" => false } do |f| %>
+	<%= f.input :transmitter, :label => t("label_inspection.transmitter").capitalize, :required => true, :as => :select, :collection => [["Aedesalbopictus", "Aedesalbopictus"], ["Aedes aegypti", "Aedes aegypti"]], :include_blank => (t "prompt") %>
+	<%= f.input :state, :label => t("label_inspection.state").capitalize, :member_label => :name, :required => true, :include_blank => (t "prompt"), :input_html => { :id => 'state' } %>
+	<%= @inspection.state.nil? ? (f.input :city, :label => t("label_inspection.city").capitalize, :required => true, :collection => [], :include_blank => (t "label_inspection.prompt_city"), :input_html => { :id => 'city' }) : (f.input :city, :label => t("label_inspection.city").capitalize, :required => true, :collection => @inspection.state.try(:cities), :member_label => :name, :include_blank => (t "label_inspection.prompt_city"), :input_html => { :id => 'city' }) %>
+	<%= f.input :area, :label => t("areas").singularize.mb_chars.capitalize.to_s, :member_label => :description, :required => true, :include_blank => (t "prompt") %>
+	<%= f.input :place, :label => t("place").capitalize, :member_label => :description, :required => true, :include_blank => (t "prompt") %>
+	<%= f.input :code, :required => true, :label => t("label_inspection.code").capitalize %>
+	<%= f.input :enrollment, :required => true, :label => t("label_inspection.enrollment").capitalize %>
+	<%= f.input :agent, :required => true, :label => t("label_inspection.agent").capitalize %>
+	<%= f.input :gender, :required => true, :label => t("label_inspection.gender").capitalize, :as => :select, :collection => [[t("male").capitalize, "M"], [t("female").capitalize, "F"]], :include_blank => (t "prompt") %>
+	<%= f.input :inspection_date, :include_blank => false, :order => [:day, :month, :year], :prompt => { :day => t("date_select.day"), :month => t("date_select.month"), :year => t("date_select.year") }, :label => t("label_inspection.date_inspection").capitalize %>
+	<%= f.input :comments, :label => t("label_inspection.comments").capitalize %>
+	<%= f.input :the_geom, :required => true, :as => :hidden %>
+	<button type="button" id="get_location" data-inline="true"><%= t("get_location").capitalize %></button>
+	<div id="map"></div>
+	<%= form_buttons(inspections_path, @inspection, f) %>
+<% end %>
+<% unless @inspection.new_record? %>
+	<%= render 'javascript' %>
+<% end %>

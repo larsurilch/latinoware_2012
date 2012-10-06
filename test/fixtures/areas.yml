@@ -1,0 +1,10 @@
+# encoding: utf-8
+
+one:
+  description: Não infestada
+
+two:
+  description: Infestada sem transmissão de dengue
+  
+three:
+  description: Com história prévia de transmissão de dengue

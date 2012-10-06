@@ -1,0 +1,30 @@
+<%= render :partial => "home/back", :locals => {:titulo => t("back").capitalize, :url => './'} %>
+<%= render :partial => "home/new", :locals => {:titulo => t("add").capitalize, :url => new_inspection_path} %>
+<%= flash_message.html_safe %>
+<h3><%= t("listing").capitalize + ' ' + t("of") + ' ' + t("inspections") %></h3>
+<table>
+    <% unless @inspections.blank? %>
+    	<thead>
+    	    <tr>
+    	    	<th><%= t("areas").singularize.mb_chars.capitalize.to_s %></th>
+    	    	<th><%= t("place").capitalize %></th>
+    	    	<th><%= t("label_inspection.transmitter").capitalize %></th>
+    	    	<th><%= t("label_inspection.city").capitalize %></th>
+    	    	<%= ((content_tag :th) * 3).html_safe %>
+    	    </tr>
+    	</thead>
+    	<tbody>
+    	    <% @inspections.each do |inspection| %>
+				<tr>
+					<td><%= inspection.area.try(:description) %></td>
+					<td><%= inspection.place.try(:description) %></td>
+					<td><%= inspection.transmitter %></td>
+					<td><%= "#{inspection.city.try(:name)} / #{inspection.city.try(:abbreviation)}" %></td>
+    	           	<%= actions inspection, edit_inspection_path(inspection), true %>
+    	       </tr>
+    	    <% end %>
+    	</tbody>
+    <% else %>
+    	<tr><td><%= t("not_information").capitalize %></td></tr>
+    <% end %>
+</table>

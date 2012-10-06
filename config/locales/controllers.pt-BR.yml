@@ -1,0 +1,5 @@
+pt-BR:
+  flash_alert: ! 'O registro não pode ser %{word}.'
+  flash_notice: ! 'O registro foi %{word} com sucesso!!!'
+  word_save: salvo
+  word_update: atualizado

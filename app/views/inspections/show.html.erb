@@ -1,0 +1,18 @@
+<%= render :partial => "home/back", :locals => {:titulo => t("back").capitalize, :url => inspections_path} %>
+<h3><%= t("details_inspection").capitalize %></h3>
+<ul data-role="listview" data-inset="true">
+	<li><b><%= t("areas").singularize.mb_chars.capitalize.to_s %>:</b> <%= @inspection.area.try(:description) %></li>
+	<li><b><%= t("place").capitalize %>:</b> <%= @inspection.place.try(:description) %></li>
+	<li><b><%= t("label_inspection.transmitter").capitalize %>:</b> <%= @inspection.transmitter %></li>
+	<li><b><%= t("label_inspection.city").capitalize %>:</b> <%= "#{@inspection.city.try(:name)} / #{@inspection.city.try(:abbreviation)}" %></li>
+	<li><b><%= t("label_inspection.code").capitalize %>:</b> <%= @inspection.code.to_s %></li>
+	<li><b><%= t("label_inspection.enrollment").capitalize %>:</b> <%= @inspection.enrollment %></li>
+	<li><b><%= t("label_inspection.agent").capitalize %>:</b> <%= @inspection.agent %></li>
+	<li><b><%= t("label_inspection.gender").capitalize %>:</b> <%= @inspection.gender == 'M'? t("male").capitalize : t("female").capitalize %></li>
+	<li><b><%= t("label_inspection.date_inspection").capitalize %>:</b> <%= l @inspection.inspection_date %></li>
+	<li><b><%= t("label_inspection.comments").capitalize %>:</b> <%= @inspection.comments %></li>
+	<li><b><%= t("created").capitalize %>:</b> <%= l @inspection.created_at %></li>
+	<li><b><%= t("updated").capitalize %>:</b> <%= l @inspection.updated_at %></li>
+	<li><div id="map_view"></div></li>
+</ul>
+<%= render 'javascript' %>

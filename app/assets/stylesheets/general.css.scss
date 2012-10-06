@@ -1,0 +1,141 @@
+/* Início Formtastic */
+
+li {
+  list-style-type: none;
+}
+.errors {
+  margin: 10px 0 0 10% !important;
+}
+.input {
+  margin: 0 !important;
+}
+.ui-select .ui-btn {
+  width: 85.5%;
+}
+.ui-li-static {
+  font-weight: normal !important;
+}
+.fragments-group {
+  padding: 0 0 0 12.5% !important;
+  width: 100% !important;
+}
+.fragment {
+  width: 30% !important;
+  margin: 0 !important;
+}
+
+
+/* Variables, Mixins */
+$measure: 84.5%;
+
+@mixin background-linear($colorInitial, $colorEnd) {
+  background-image: linear-gradient(top, $colorInitial, $colorEnd);
+  background-image: -o-linear-gradient(top, $colorInitial, $colorEnd);
+  background-image: -moz-linear-gradient(top, $colorInitial, $colorEnd);
+  background-image: -webkit-linear-gradient(top, $colorInitial, $colorEnd);
+  background-image: -ms-linear-gradient(top, $colorInitial, $colorEnd);
+}
+@mixin border-table($color) {
+  border-top: 1px solid $color;
+  border-bottom: 1px solid $color;
+}
+@mixin rounded-corners($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+@mixin flash-message($color, $background, $image) {
+  border: 1px solid $color;
+  background: $background image-url($image) 3px 8px no-repeat;
+  padding: 10px 0 10px 35px;
+  color: #000;
+  @include rounded-corners(8px);
+}
+
+
+/* Styles */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+tr:nth-child(odd) {
+  @include border-table(#CCC);
+  background-color: #EEE;
+}
+td {
+  padding: 6px;
+}
+th {
+  text-shadow: 0 1px 1px #194B7E;
+  color: #FFF;
+  @include background-linear(#5F9CC5, #396B9E);
+  @include border-table(#044062);
+  @extend td;
+}
+.timestamp {
+  width: 19%;
+  text-align: center;
+}
+.actions {
+  @extend .timestamp;
+  width: 4%;
+}
+.form_mobile {
+    border: 1px solid #AAA;
+    background-color: #EEE;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    @include rounded-corners(8px);
+}
+.area {
+  label {
+    width: 12.5% !important;
+  }
+  input[type="text"] {
+    width: $measure;
+  }
+}
+.place {
+  @extend .area
+}
+.inspection {
+  @extend .area;
+  @each $type in number, date {
+    input[type="#{$type}"] {
+      width: $measure !important;
+    }
+  }
+  textarea {
+    width: $measure !important;
+  }
+}
+.form_mobile {
+  p {
+    text-align: center;
+  }
+}
+.ui-content {
+  h3 {
+    padding: 10px 10px 10px 20px;
+    @extend .form_mobile;
+  }
+}
+.alert {
+  @include flash-message(#F05400, #FFC5A6, 'ico_erro_24.png');
+}
+.notice {
+  @include flash-message(#4ED526, #CAF4BD, 'ico_sucesso_24.png');
+}
+.warning {
+  @include flash-message(#F1CE00, #F6EE7F, 'ico_mensagem_24.png');
+}
+#map {
+  height: 400px;
+  width: 97%;
+  margin: 12px auto;
+}
+#map_view {
+  width: 100%;
+  @extend #map;
+}

@@ -1,0 +1,4 @@
+<%= semantic_form_for @place, :html => { :class => "form_mobile", "data-ajax" => false } do |f| %>
+    <%= f.input :description, :label => t("description").capitalize %>
+    <%= form_buttons places_path, @place, f %>
+<% end %>

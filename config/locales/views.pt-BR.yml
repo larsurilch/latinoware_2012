@@ -1,0 +1,49 @@
+pt-BR:
+  welcome: Bem-vindo ao SINSPED - Sistema de Inspeção da Dengue. Através dele será possível fazer consultas rápidas e cadastros georreferenciados dos focos de dengue a partir de um dispositivo móvel.
+  default_title: sinsped
+  list: listar
+  areas: áreas
+  places: locais
+  place: local
+  inspections: inspeções
+  inspection: inspeção
+  listing: listagem
+  of: de
+  back: voltar
+  details_inspection: detalhes da inspeção
+  add: adicionar
+  not_information: Não há informações cadastradas.
+  description: descrição
+  edit: alterar
+  delete: excluir
+  confirm: Deseja realmente excluir esse registro?
+  created: criação
+  updated: atualização
+  cancel: cancelar
+  update: atualizar
+  save: salvar
+  prompt: Selecione uma opção
+  male: masculino
+  female: feminino
+  get_location: capturar localização
+  label_inspection:
+    transmitter: transmissor
+    state: estado
+    city: cidade
+    prompt_city: Selecione primeiro um estado
+    agent: agente
+    enrollment: matrícula
+    code: código
+    gender: sexo
+    date_inspection: data de inspeção
+    comments: observações
+  time:
+    formats:
+      default: ! '%d/%m/%Y - %H:%M:%S'
+  date:
+    formats:
+      default: ! '%d/%m/%Y'
+  date_select:
+    day: Selecione um dia
+    month: Selecione um mês
+    year: Selecione um ano

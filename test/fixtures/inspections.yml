@@ -1,0 +1,29 @@
+# encoding: utf-8
+
+one:
+  transmitter: Aedes aegypti
+  code: 2735
+  enrollment: 900674
+  agent: Benício Ribeiro da Paixão Júnior
+  gender: M
+  inspection_date: 2012-07-21
+  comments:
+  area: 2
+  place: 7
+  state: 7
+  city: 806
+  the_geom: POINT (-47.93439570000001 -15.7940724)
+
+two:
+  transmitter: Aedesalbopictus
+  code: 2735
+  enrollment: 900674
+  agent: Benício Ribeiro da Paixão Júnior
+  gender: M
+  inspection_date: 2012-07-23
+  comments: Vistória feita no CCBB
+  area: 2
+  place: 6
+  state: 7
+  city: 806
+  the_geom: POINT (-47.83795569999998 -15.813181)

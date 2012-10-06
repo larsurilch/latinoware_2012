@@ -1,0 +1,25 @@
+# encoding: utf-8
+
+one:
+  description: Caixa d'água
+  
+two:
+  description: Tanque
+
+three:
+  description: Depósitos de barro
+
+four:
+  description: "Depósitos de madeira"
+
+five:
+  description: Pneus
+
+six:
+  description: Recipientes naturais
+
+seven:
+  description: Cacimbas, poços e cisternas
+
+eight:
+  description: Outros

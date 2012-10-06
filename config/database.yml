@@ -1,0 +1,19 @@
+development:
+  adapter: postgis
+  encoding: UTF8
+  database: mobile_development
+  pool: 5
+  username: postgres
+  password: 1234
+  schema_search_path: "public,postgis"
+  script_dir: /usr/share/postgresql/9.1/contrib/postgis-1.5
+
+test:
+  adapter: postgis
+  encoding: UTF8
+  database: mobile_test
+  pool: 5
+  username: postgres
+  password: 1234
+  schema_search_path: "public,postgis"
+  script_dir: /usr/share/postgresql/9.1/contrib/postgis-1.5

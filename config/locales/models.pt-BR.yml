@@ -1,0 +1,24 @@
+pt-BR:
+  errors: &errors
+    format: ! '%{message}'
+    messages:
+      blank: O campo é obrigatório.
+      too_short: ! 'O campo deve ter no mínimo %{count} caracteres.'
+      too_long: ! 'O campo deve ter no máximo %{count} caracteres.'
+      inclusion: Selecione uma opção da lista.
+      not_a_number: Informe somente números.
+  date:
+    month_names:
+    - 
+    - Janeiro
+    - Fevereiro
+    - Março
+    - Abril
+    - Maio
+    - Junho
+    - Julho
+    - Agosto
+    - Setembro
+    - Outubro
+    - Novembro
+    - Dezembro

@@ -1,0 +1,4 @@
+<%= javascript_tag do %>
+	var the_geom = '<%= @inspection.the_geom %>';
+	var area = '<%= @inspection.area.try(:description) %>';
+<% end %>

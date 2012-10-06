@@ -1,0 +1,25 @@
+<%= render :partial => "home/back", :locals => {:titulo => t("back").capitalize, :url => './'} %>
+<%= render :partial => "home/new", :locals => {:titulo => t("add").capitalize, :url => new_area_path} %>
+<%= flash_message.html_safe %>
+<h3><%= t("listing").capitalize + ' ' + t("of") + ' ' + t("areas") %></h3>
+<table>
+    <% unless @areas.blank? %>
+		<thead>
+    		<tr>
+    			<th><%= t("description").capitalize %></th>
+    			<%= th_timestamp %>
+    	    </tr>
+    	</thead>
+    	<tbody>
+			<% @areas.each do |area| %>
+    	    	<tr>
+    	        	<td><%= area.description %></td>
+    	           	<%= td_timestamp area %>
+    	           	<%= actions area, edit_area_path(area), false %>
+    	       	</tr>
+    	    <% end %>
+    	</tbody>
+    <% else %>
+    	<tr><td><%= t("not_information").capitalize %></td></tr>
+    <% end %>
+</table>
