@@ -5,7 +5,7 @@ estudo e não deve ser usado em projetos comerciais.
 
 == Instalação e configuração
 
-A aplicação foi testada e executada do Ubuntu 12.04 64 bits. Caso na execução apareçam alguns erros verifiques os itens
+A aplicação foi testada e executada no Ubuntu 12.04 64 bits. Caso na execução apareçam alguns erros verifique os itens
 abaixo:
 
 1. Instalação do NodeJS:
